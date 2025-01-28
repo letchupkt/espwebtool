@@ -7,55 +7,101 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="/" class="home-link">
-                <img src="/logo.png" alt="ESP Web Tool">
-                <h1>ESPWEBTOOL</h1>
-            </a>
-        </div>
-        <div class="header-right">
-            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-            <button class="help-btn">HELP <span class="help-icon">?</span></button>
-            <button class="more-tools-btn">MORE TOOLS <span class="external-link">↗</span></button>
-        </div>
-    </header>
-
-    <main>
-        <div class="container">
-            <button id="connectBtn" class="connect-btn">CONNECT</button>
-            
-            <div class="settings-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
-                </svg>
-            </div>
-
-            <div class="instructions">
-                <div class="info-icon">ℹ</div>
-                <ol>
-                    <li>Click on Connect</li>
-                    <li>Plug in your ESP & select the port</li>
-                    <li>Add your .bin & set the address</li>
-                    <li>Click Program to flash it 🚀</li>
-                </ol>
-            </div>
-
-            <div class="output-section">
-                <div class="output-header">
-                    <span class="output-title">Output</span>
-                    <button class="terminal-btn">TERMINAL <span class="external-link">↗</span></button>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    <h1>ESP Web Tool</h1>
                 </div>
-                <div class="output-content">
-                    <p>Click Connect to start</p>
+                <div class="header-actions">
+                    <button id="themeToggle" class="icon-button" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon theme-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon theme-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <button class="icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </button>
+                    <button class="icon-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </button>
                 </div>
             </div>
-        </div>
-    </main>
+        </header>
 
-    <footer>
-        <p>Made with ❤️ by <a href="https://www.instagram.com/letchu_pkt" target="_blank" rel="noopener">Letchu PKT</a></p>
-    </footer>
+        <!-- Main Content -->
+        <main class="main container">
+            <div class="content">
+                <!-- Connection Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                            Device Connection
+                        </h2>
+                        <button id="connectButton" class="button primary">Connect</button>
+                    </div>
+
+                    <div class="panel-content">
+                        <div class="form-group">
+                            <label for="portSelect">Serial Port</label>
+                            <select id="portSelect" class="select">
+                                <option value="">Select a port...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Firmware Binary</label>
+                            <div class="file-upload">
+                                <input type="file" id="firmwareFile" accept=".bin" class="file-input">
+                                <button id="programButton" class="button success" disabled>Program</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal Output -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            Output
+                        </h2>
+                        <button id="clearButton" class="button text">Clear</button>
+                    </div>
+                    <div class="terminal">
+                        <pre id="output">Click Connect to start</pre>
+                    </div>
+                </div>
+
+                <!-- Serial Monitor -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+                            Serial Monitor
+                        </h2>
+                        <button id="serialClearButton" class="button text">Clear</button>
+                    </div>
+                    <div class="terminal">
+                        <pre id="serialOutput">No serial data</pre>
+                    </div>
+                    <div class="serial-input-container">
+                        <input type="text" id="serialInput" class="serial-input" placeholder="Type command..." disabled>
+                        <button id="serialSendButton" class="button primary" disabled>Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Made with ❤️ by <a href="https://instagram.com/letchu_pkt" target="_blank" class="author-link">letchu pkt</a> • <span id="year"></span></p>
+            </div>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
