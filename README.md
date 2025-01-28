@@ -1,10 +1,27 @@
-# ESP-web tool
-ESP Web Tool - A powerful web-based tool for flashing and managing ESP devices. Easily upload firmware, connect to your ESP devices, and monitor output directly from your browser.
+# ESP Web Tool
 
-# Check this Site 
-https://espwebtool.netlify.app
+A web-based tool for flashing and monitoring ESP32/ESP8266 devices directly from your browser. This tool uses the Web Serial API to communicate with ESP devices and provides a user-friendly interface for firmware updates and serial monitoring.
 
+## Features
 
+- 🔌 Direct serial connection to ESP devices
+- 📤 Firmware upload capability
+- 🖥️ Built-in serial monitor
+- 🌓 Dark/Light theme support
+- 💻 Cross-platform compatibility
+
+## Requirements
+
+- A modern web browser that supports the Web Serial API (Chrome, Edge, Opera)
+- An ESP32 or ESP8266 device connected via USB
+
+## Usage
+
+1. Connect your ESP device to your computer via USB
+2. Click the "Connect" button and select your device from the port list
+3. Choose a firmware file (.bin) to upload
+4. Click "Program" to flash the device
+5. Use the Serial Monitor to interact with your device
 
 
 ![espwebtool](https://github.com/user-attachments/assets/182231bf-b2ed-4c14-a259-a1bb87536eda)
