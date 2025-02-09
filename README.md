@@ -23,5 +23,6 @@ A web-based tool for flashing and monitoring ESP32/ESP8266 devices directly from
 4. Click "Program" to flash the device
 5. Use the Serial Monitor to interact with your device
 
+![espwebtool](https://github.com/user-attachments/assets/ddae2f54-3865-4d26-b4f9-a29aca2aac77)
 
-![espwebtool](https://github.com/user-attachments/assets/182231bf-b2ed-4c14-a259-a1bb87536eda)
+
